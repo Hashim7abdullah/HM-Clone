@@ -1,31 +1,46 @@
 import React from "react";
-import {
-  Container,
-  Logo,
-  NavLinks,
-  NavLink,
-  SearchContainer,
-  SearchInput,
-  IconContainer,
-} from "../Navbar/Navabar";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <Container>
-      <Logo>H&M</Logo>
-      <NavLinks>
-        <NavLink href="#">Women</NavLink>
-        <NavLink href="#">Men</NavLink>
-        <NavLink href="#">Kids</NavLink>
-        <NavLink href="#">Sale</NavLink>
-      </NavLinks>
-      <IconContainer>
-        <SearchContainer>
-          <SearchInput type="text" placeholder="Search" />
-        </SearchContainer>
-        <NavLink href="#">Sign In</NavLink>
-        <NavLink href="#">Cart</NavLink>
-      </IconContainer>
+      <Left>
+        <NavLink>Sustainability</NavLink>
+        <NavLink>Customer Service</NavLink>
+        <NavLink>Newsletter</NavLink>
+        <Link>
+          <img src="" alt="" />
+        </Link>
+      </Left>
+      <Middle>
+        <Logo>
+          <img src="" alt="" />
+        </Logo>
+        <Links>
+          <NavLink>Ladies</NavLink>
+          <NavLink>Men</NavLink>
+          <NavLink>Baby</NavLink>
+          <NavLink>Kids</NavLink>
+          <NavLink>Home</NavLink>
+          <NavLink>Sale</NavLink>
+        </Links>
+      </Middle>
+      <Right>
+        <Top>
+          <SignIn>
+            <img src="" alt="" />
+            <p>Sign in</p>
+          </SignIn>
+          <SignIn>
+            <img src="" alt="" />
+            <p>Favourites</p>
+          </SignIn>
+          <SignIn>
+            <img src="" alt="" />
+            <p>Shopping bag</p>
+          </SignIn>
+        </Top>
+      </Right>
     </Container>
   );
 };
