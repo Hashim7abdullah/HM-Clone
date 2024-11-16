@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { TfiMenu, TfiMore } from "react-icons/tfi";
-import { CiShoppingCart, CiUser, CiSearch,CiHeart } from "react-icons/ci";
+import { CiShoppingCart, CiUser, CiSearch, CiHeart } from "react-icons/ci";
 import logo from "../../assets/h-m.svg";
+import { Context } from "../../Context/Context";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { navigate } = useContext(Context);
 
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -23,20 +26,32 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={toggleMenu} />
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={toggleMenu}
+        />
       )}
 
       {/* Desktop Layout (>= 1024px) */}
       <div className="hidden lg:flex lg:flex-1">
         {/* Left Section */}
         <div className="flex items-center gap-5">
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Sustainability
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Customer Service
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Newsletter
           </Link>
           <div className="relative">
@@ -70,32 +85,59 @@ const Navbar = () => {
         }`}
       >
         <div className="p-5 space-y-4">
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="block text-gray-800 font-medium hover:text-gray-500"
+          >
             Sustainability
           </Link>
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="block text-gray-800 font-medium hover:text-gray-500"
+          >
             Customer Service
           </Link>
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="block text-gray-800 font-medium hover:text-gray-500"
+          >
             Newsletter
           </Link>
           <div className="border-t pt-4">
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Ladies
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Men
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Baby
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Kids
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Home
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
+            <Link
+              to="#"
+              className="block text-gray-800 font-medium hover:text-gray-500"
+            >
               Sale
             </Link>
           </div>
@@ -105,25 +147,48 @@ const Navbar = () => {
       {/* Middle Section - Only visible on desktop */}
       <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:flex-1">
         <div className="mb-4">
-          <img src={logo} alt="Logo" className="h-12 object-contain" />
+          <img
+            onClick={() => navigate("/")}
+            src={logo}
+            alt="Logo"
+            className="h-12 object-contain"
+          />
         </div>
         <div className="flex gap-5">
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Ladies
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Men
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Baby
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Kids
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Home
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
+          <Link
+            to="#"
+            className="text-gray-800 font-medium hover:text-gray-500"
+          >
             Sale
           </Link>
         </div>
