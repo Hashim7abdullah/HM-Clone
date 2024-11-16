@@ -1,8 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.font-Outfit{
+  font-family: Outfit;
+}
+
+/* Text shadow utilities */
+.text-shadow-sm {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
