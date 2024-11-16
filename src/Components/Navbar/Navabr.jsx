@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { TfiMenu, TfiMore, TfiHeart } from "react-icons/tfi";
-import { CiShoppingCart, CiUser, CiSearch } from "react-icons/ci";
+import { TfiMenu, TfiMore } from "react-icons/tfi";
+import { CiShoppingCart, CiUser, CiSearch,CiHeart } from "react-icons/ci";
 import logo from "../../assets/h-m.svg";
 
 const Navbar = () => {
@@ -30,18 +30,18 @@ const Navbar = () => {
       <div className="hidden lg:flex lg:flex-1">
         {/* Left Section */}
         <div className="flex items-center gap-5">
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Sustainability
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Customer Service
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Newsletter
           </Link>
           <div className="relative">
             <button
-              className="text-gray-800 hover:text-gray-600"
+              className="text-gray-800 hover:text-gray-500"
               onClick={toggleDropdown}
             >
               <TfiMore />
@@ -70,32 +70,32 @@ const Navbar = () => {
         }`}
       >
         <div className="p-5 space-y-4">
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
             Sustainability
           </Link>
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
             Customer Service
           </Link>
-          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
             Newsletter
           </Link>
           <div className="border-t pt-4">
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Ladies
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Men
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Baby
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Kids
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Home
             </Link>
-            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-600">
+            <Link to="#" className="block text-gray-800 font-medium hover:text-gray-500">
               Sale
             </Link>
           </div>
@@ -108,36 +108,36 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="h-12 object-contain" />
         </div>
         <div className="flex gap-5">
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Ladies
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Men
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Baby
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Kids
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Home
           </Link>
-          <Link to="#" className="text-gray-800 font-medium hover:text-gray-600">
+          <Link to="#" className="text-gray-800 font-medium hover:text-gray-500">
             Sale
           </Link>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end">
+      <div className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end text-gray-800 font-medium hover:text-gray-500">
         <div className="flex items-center gap-4">
           <Link to="#" className="flex items-center gap-2">
             <CiUser className="text-2xl" />
             <span className="hidden lg:inline text-sm">Sign In</span>
           </Link>
           <Link to="#" className="flex items-center gap-2">
-            <TfiHeart className="text-2xl" />
+            <CiHeart className="text-2xl" />
             <span className="hidden lg:inline text-sm">Favourites</span>
           </Link>
           <Link to="#" className="flex items-center gap-2">
