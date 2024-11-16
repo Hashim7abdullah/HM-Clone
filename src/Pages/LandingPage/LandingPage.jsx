@@ -25,19 +25,19 @@ const LandingPage = () => {
         />
         <div className="absolute bottom-[2%] left-0 right-0 text-center text-white px-4 py-[1vh]">
           {/* Updated p tag */}
-          <p className="font-Outfit text-[1.8vw] sm:text-[1.6vw] md:text-[1.4vw] lg:text-[1.2vw] font-semibold font-[600] 
+          <p className="font-Outfit text-[1.8vw] sm:text-[1.6vw] md:text-[1.4vw] lg:text-[1.2vw]  font-[600] 
              tracking-wider mb-[1vh] text-shadow-sm">
             New Arrivals
           </p>
           {/* Updated h2 tag */}
-          <h2 className="font-Outfit text-[4.5vw] sm:text-[4vw] md:text-[3.5vw] lg:text-[3vw] font-bold font-[800] 
+          <h2 className="font-Outfit text-[4.5vw] sm:text-[4vw] md:text-[3.5vw] lg:text-[3vw]  font-[800] 
              tracking-tight leading-tight text-shadow-lg
              transition-all duration-300 mb-2">
             The black tie edit
           </h2>
           <button 
             className="hidden lg:inline-block bg-white text-gray-800 px-3 py-1 
-                     text-[1vw] font-bold tracking-wide
+                     text-[0.9vw] font-semibold tracking-wide
                      transform transition-transform duration-300 ease-in-out
                      hover:scale-105 hover:bg-gray-100
                      focus:outline-none focus:ring-2 focus:ring-gray-400
