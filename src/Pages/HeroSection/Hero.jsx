@@ -18,19 +18,19 @@ const Hero = () => {
       <div className="flex justify-center items-center gap-6 mb-4">
         <p
           data-aos={!isMobile ? "fade-up-right" : null}
-          className="text-gray-800 font-medium hover:text-blue-500 p-2 block text-center lg:block lg:text-left text-xs sm:text-xs md:text-sm"
+          className="text-gray-800 font-medium hover:text-gray-500 p-2 block text-center lg:block lg:text-left text-xs sm:text-xs md:text-sm cursor-pointer"
         >
           {`Free shipping above ${currency} 1999`}
         </p>
         <p
           data-aos={!isMobile ? "zoom-in-up" : null}
-          className="text-gray-800 font-medium hover:text-blue-500 p-2 hidden md:block text-sm sm:text-xs md:text-sm"
+          className="text-gray-800 font-medium hover:text-gray-500 p-2 hidden md:block text-sm sm:text-xs md:text-sm cursor-pointer"
         >
           Free &amp; flexible 15 days return
         </p>
         <p
           data-aos={!isMobile ? "fade-up-left" : null}
-          className="text-gray-800 font-medium hover:text-blue-500 p-2 hidden md:block text-sm sm:text-xs md:text-sm"
+          className="text-gray-800 font-medium hover:text-gray-500 p-2 hidden md:block text-sm sm:text-xs md:text-sm cursor-pointer"
         >
           Estimated delivery time: 2-7 days
         </p>
