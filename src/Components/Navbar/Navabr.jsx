@@ -4,12 +4,14 @@ import { TfiMenu, TfiMore } from "react-icons/tfi";
 import { CiShoppingCart, CiUser, CiSearch, CiHeart } from "react-icons/ci";
 import logo from "../../assets/h-m.svg";
 import { Context } from "../../Context/Context";
+import "aos/dist/aos.css";
+
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { navigate } = useContext(Context);
+  const { navigate , isMobile } = useContext(Context);
 
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -35,7 +37,7 @@ const Navbar = () => {
       {/* Desktop Layout (>= 1024px) */}
       <div className="hidden lg:flex lg:flex-1">
         {/* Left Section */}
-        <div className="flex items-center gap-5">
+        <div data-aos="fade-right" className="flex items-center gap-5">
           <Link
             to="#"
             className="text-gray-800 font-medium hover:text-gray-500"
@@ -145,8 +147,8 @@ const Navbar = () => {
       </div>
 
       {/* Middle Section - Only visible on desktop */}
-      <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:flex-1">
-        <div className="mb-4">
+      <div data-aos="zoom-in" className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:flex-1">
+        <div data-aos="zoom-in" className="mb-4">
           <img
             onClick={() => navigate("/")}
             src={logo}
@@ -195,7 +197,7 @@ const Navbar = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end text-gray-800 font-medium hover:text-gray-500">
+      <div data-aos="fade-left" className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end text-gray-800 font-medium hover:text-gray-500">
         <div className="flex items-center gap-4">
           <Link to="#" className="flex items-center gap-2">
             <CiUser className="text-2xl" />
