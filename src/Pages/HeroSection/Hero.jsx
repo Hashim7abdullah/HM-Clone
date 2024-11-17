@@ -1,52 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../../Context/Context";
 import HeroImg from "../../assets/HeroIMG.avif";
 import Hero2 from "../../assets/Hero2IMG.avif";
-import AOS from "aos";
+import Hero3 from "../../assets/Hero3.avif";
+import Hero3Sub from "../../assets/Hero3sub.avif";
 import "aos/dist/aos.css";
 import EnhancedStarfield from "../../Components/GlitterEffect/GlitterEffect";
+import { IoAdd, IoClose } from "react-icons/io5";
 
 const Hero = () => {
-  const { currency } = useContext(Context);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    // Function to handle AOS initialization and updates
-    const handleResize = () => {
-      const isCurrentlyMobile = window.innerWidth < 768;
-      setIsMobile(isCurrentlyMobile);
-
-      if (isCurrentlyMobile) {
-        // Disable AOS and remove all AOS animations
-        AOS.init({ disable: true });
-        document.querySelectorAll("[data-aos]").forEach((element) => {
-          element.removeAttribute("data-aos-animate");
-          element.removeAttribute("data-aos-delay");
-          element.style.transform = "none";
-          element.style.opacity = "1";
-        });
-      } else {
-        // Re-enable and initialize AOS for desktop
-        AOS.init({
-          duration: 1000,
-          once: false,
-          mirror: true,
-          offset: 100,
-          disable: false,
-        });
-      }
-      AOS.refresh();
-    };
-
-    // Initial setup
-    handleResize();
-
-    // Add resize listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const [isMenuVisible, setMenuVisible] = useState(false);
+  const { currency, isMobile, Button } = useContext(Context);
 
   return (
     <div className="min-h-screen bg-gray-50 py-2 px-4">
@@ -87,16 +51,16 @@ const Hero = () => {
           <h2 className="font-Outfit text-[4.5vw] sm:text-[4vw] md:text-[3.5vw] lg:text-[3vw] font-[800] tracking-tight leading-tight text-shadow-lg transition-all duration-300 mb-2">
             The black tie edit
           </h2>
-          <button className="hidden lg:inline-block bg-white text-gray-800 px-3 py-1 text-[0.9vw] font-semibold tracking-wide transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 active:scale-95">
-            Shop now
-          </button>
+          <Button />
         </div>
       </div>
 
       {/* Hero Image 2 */}
-      <div className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8">
+      <div
+        data-aos={!isMobile ? "fade-up" : null}
+        className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8"
+      >
         <img
-          data-aos={!isMobile ? "fade-up" : null}
           src={Hero2}
           alt="Hero"
           className="w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] object-cover"
@@ -108,16 +72,83 @@ const Hero = () => {
           <h3 className="font-Outfit text-[4.5vw] sm:text-[4vw] md:text-[3.5vw] lg:text-[1.5vw] font-[500] tracking-tight leading-tight text-shadow-lg transition-all duration-300 mb-2 max-w-[90%] sm:max-w-[85%] md:max-w-[80%]">
             Statement hoodies, sweatshirts, and puffers with a sporty allure.
           </h3>
-          <button className="hidden lg:inline-block bg-white text-gray-800 px-3 py-1 text-[0.9vw] font-semibold tracking-wide transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 active:scale-95">
-            Shop now
-          </button>
+          <Button />
         </div>
       </div>
+
+      {/* Starfield and Menu Section */}
       <div className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8">
-        <EnhancedStarfield title="Get winter ready"  description="Find sweaters, jackets, hoodies and knits to keep you warm this winter." />
-        
+        {/* Starfield Section */}
+        <div className="relative bg-gray-500">
+          <EnhancedStarfield
+            title="Get winter ready"
+            description="Find sweaters, jackets, hoodies, and knits to keep you warm this winter."
+          />
+
+          {/* Toggle Menu Icon - Only visible below 1024px */}
+          <button
+            className="absolute lg:hidden right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 transition-all duration-300 ease-in-out"
+            onClick={() => setMenuVisible(!isMenuVisible)}
+            aria-label={isMenuVisible ? "Close menu" : "Open menu"}
+          >
+            {isMenuVisible ? <IoClose /> : <IoAdd />}
+          </button>
+        </div>
+
+        {/* Menu Items Section */}
+        <div
+          className={`
+          bg-black px-6 pb-6  transition-all duration-500 ease-in-out
+          ${isMenuVisible ? "block" : "hidden lg:block"}
+        `}
+        >
+          <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+            {["Ladies", "Men", "Kids", "Babies"].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-3 rounded-md text-center font-medium text-gray-800 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:bg-gray-50"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Hero3 */}
+
+      <div
+  data-aos={!isMobile ? "fade-up" : null}
+  className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8"
+>
+  {/* Responsive Image */}
+  <picture className="block w-full">
+    <source 
+      srcSet={Hero3Sub} 
+      media="(max-width: 1023px)" 
+    />
+    <img
+      src={Hero3}
+      alt="Hero"
+      className="w-full h-auto max-h-[100vh] object-cover object-top"
+    />
+  </picture>
+
+  {/* Text Content */}
+  <div className="absolute top-1/2 left-[5%] transform -translate-y-1/2 text-black space-y-4 text-left max-w-[70%] sm:max-w-[60%] lg:max-w-[50%] lg:text-white">
+    <h2 className="font-Outfit font-[800] tracking-wide text-shadow-sm
+      text-[7vw]          /* Mobile default */
+      sm:text-[6vw]       /* Small screens */
+      md:text-[5vw]       /* Medium screens */
+      lg:text-[4vw]       /* Large screens */
+      leading-tight
+      transform-gpu
+    ">
+      Holiday 2024
+    </h2>
+    <Button />
+  </div>
+</div>    </div>
   );
 };
 
