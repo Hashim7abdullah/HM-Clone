@@ -145,9 +145,9 @@ const Hero = () => {
         </div>
       </div>
       {/* Best winter Section */}
-
-      <Winter />
-      
+      <div className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8">
+        <Winter />
+      </div>
     </div>
   );
 };
