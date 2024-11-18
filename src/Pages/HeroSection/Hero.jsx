@@ -7,6 +7,7 @@ import Hero3Sub from "../../assets/Hero3sub.avif";
 import "aos/dist/aos.css";
 import EnhancedStarfield from "../../Components/GlitterEffect/GlitterEffect";
 import { IoAdd, IoClose } from "react-icons/io5";
+import Winter from "../../Components/BestSellers/Winter";
 
 const Hero = () => {
   const [isMenuVisible, setMenuVisible] = useState(false);
@@ -35,7 +36,6 @@ const Hero = () => {
           Estimated delivery time: 2-7 days
         </p>
       </div>
-
       {/* Hero Image 1 */}
       <div className="relative w-full max-w-[1000px] mx-auto px-1 sm:px-6 lg:px-8">
         <img
@@ -54,7 +54,6 @@ const Hero = () => {
           <Button />
         </div>
       </div>
-
       {/* Hero Image 2 */}
       <div
         data-aos={!isMobile ? "fade-up" : null}
@@ -75,7 +74,6 @@ const Hero = () => {
           <Button />
         </div>
       </div>
-
       {/* Starfield and Menu Section */}
       <div className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8">
         {/* Starfield Section */}
@@ -114,41 +112,43 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
       {/* Hero3 */}
-
       <div
-  data-aos={!isMobile ? "fade-up" : null}
-  className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8"
->
-  {/* Responsive Image */}
-  <picture className="block w-full">
-    <source 
-      srcSet={Hero3Sub} 
-      media="(max-width: 1023px)" 
-    />
-    <img
-      src={Hero3}
-      alt="Hero"
-      className="w-full h-auto max-h-[100vh] object-cover object-top"
-    />
-  </picture>
+        data-aos={!isMobile ? "fade-up" : null}
+        className="relative w-full max-w-[1000px] mx-auto my-8 px-1 sm:px-6 lg:px-8"
+      >
+        {/* Responsive Image */}
+        <picture className="block w-full">
+          <source srcSet={Hero3Sub} media="(max-width: 1023px)" />
+          <img
+            src={Hero3}
+            alt="Hero"
+            className="w-full h-auto max-h-[100vh] object-cover object-top"
+          />
+        </picture>
 
-  {/* Text Content */}
-  <div className="absolute top-1/2 left-[5%] transform -translate-y-1/2 text-black space-y-4 text-left max-w-[70%] sm:max-w-[60%] lg:max-w-[50%] lg:text-white">
-    <h2 className="font-Outfit font-[800] tracking-wide text-shadow-sm
-      text-[7vw]          /* Mobile default */
-      sm:text-[6vw]       /* Small screens */
-      md:text-[5vw]       /* Medium screens */
-      lg:text-[4vw]       /* Large screens */
+        {/* Text Content */}
+        <div className="absolute top-1/2 left-[5%] transform -translate-y-1/2 text-black space-y-4 text-left max-w-[20%] sm:max-w-[60%] lg:max-w-[40%] lg:text-white">
+          <h2
+            className="font-Outfit font-[800] tracking-wide text-shadow-sm
+      text-[5vw]          /* Mobile default */
+      sm:text-[5vw]       /* Small screens */
+      md:text-[4vw]       /* Medium screens */
+      lg:text-[2.5vw]       /* Large screens */
       leading-tight
       transform-gpu
-    ">
-      Holiday 2024
-    </h2>
-    <Button />
-  </div>
-</div>    </div>
+    "
+          >
+            Holiday 2024
+          </h2>
+          <Button />
+        </div>
+      </div>
+      {/* Best winter Section */}
+
+      <Winter />
+      
+    </div>
   );
 };
 
