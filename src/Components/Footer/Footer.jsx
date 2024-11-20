@@ -81,7 +81,7 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-8 mt-16 mb-12">
-          <Instagram className="w-6 h-6 text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer" />
+          <Instagram className="w-6 h-6 text-gray-600 hover:text-pink-600 transition-colors duration-200 cursor-pointer" />
           <Music2 className="w-6 h-6 text-gray-600 hover:text-green-600 transition-colors duration-200 cursor-pointer" />
           <Music className="w-6 h-6 text-gray-600 hover:text-pink-600 transition-colors duration-200 cursor-pointer" />
           <Youtube className="w-6 h-6 text-gray-600 hover:text-red-600 transition-colors duration-200 cursor-pointer" />
