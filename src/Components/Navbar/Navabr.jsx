@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { TfiMenu, TfiMore } from "react-icons/tfi";
 import { CiShoppingCart, CiUser, CiSearch, CiHeart } from "react-icons/ci";
 import logo from "../../assets/h-m.svg";
+import LoginForm from "../../Pages/Login/LoginForm";
 import { Context } from "../../Context/Context";
 import "aos/dist/aos.css";
 
@@ -197,21 +198,21 @@ const Navbar = () => {
       </div>
 
       {/* Right Section */}
-      <div data-aos="fade-left" className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end text-gray-800 font-medium hover:text-gray-500">
-        <div className="flex items-center gap-4">
-          <Link to="#" className="flex items-center gap-2">
+      <div data-aos="fade-left" className="flex flex-col items-end gap-2 lg:flex-1 lg:items-end text-gray-800 font-medium">
+        <div className="flex items-center gap-4 ">
+          <Link to="/sign-in" className="flex items-center gap-2 cursor-pointer">
             <CiUser className="text-2xl" />
             <span className="hidden lg:inline text-sm">Sign In</span>
           </Link>
-          <Link to="#" className="flex items-center gap-2">
+          <Link to="#" className="flex items-center gap-2 cursor-pointer">
             <CiHeart className="text-2xl" />
             <span className="hidden lg:inline text-sm">Favourites</span>
           </Link>
-          <Link to="#" className="flex items-center gap-2">
+          <Link to="#" className="flex items-center gap-2 cursor-pointer">
             <CiShoppingCart className="text-2xl" />
             <span className="hidden lg:inline text-sm">Shopping Bag</span>
           </Link>
-          <Link to="#" className="flex items-center gap-2 lg:hidden">
+          <Link to="#" className="flex items-center gap-2 lg:hidden cursor-pointer">
             <CiSearch className="text-2xl" />
           </Link>
         </div>

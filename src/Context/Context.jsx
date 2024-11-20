@@ -9,6 +9,7 @@ const ShopContextProvider = (props) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const navigate = useNavigate();
   const currency = "₹";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     // Function to handle AOS initialization and updates
