@@ -14,7 +14,7 @@ const Winter = () => {
   });
   const [pageDirection, setPageDirection] = useState(0);
 
-  // Memoize getItemsPerPage function
+  // Memoize getItemsPerPage 
   const getItemsPerPage = useCallback(() => {
     if (typeof window !== 'undefined') {
       if (window.innerWidth >= 1024) return 6;
