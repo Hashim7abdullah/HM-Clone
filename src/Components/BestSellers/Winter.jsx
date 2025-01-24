@@ -47,7 +47,7 @@ const Winter = () => {
     startIndex: currentPage * itemsPerPage
   }), [itemsPerPage, currentPage, products.length]);
 
-  // Memoize visible products
+  // Memoizing visible products
   const visibleProducts = useMemo(() => 
     products.slice(startIndex, startIndex + itemsPerPage),
     [startIndex, itemsPerPage, products]
