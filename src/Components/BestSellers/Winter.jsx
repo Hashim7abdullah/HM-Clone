@@ -64,7 +64,7 @@ const Winter = () => {
     setPageDirection(direction);
     setCurrentPage(newPage);
 
-    // Ensure the component stays in viewport
+    // Ensure the component stays in view
     if (componentRef.current) {
       const yOffset = -50; // Adjust this value to control scroll position
       const y = componentRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
