@@ -66,7 +66,7 @@ const Winter = () => {
 
     // Ensure the component stays in viewport
     if (componentRef.current) {
-      const yOffset = -50; // Adjust this 
+      const yOffset = -50;
       const y = componentRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       
       window.scrollTo({
