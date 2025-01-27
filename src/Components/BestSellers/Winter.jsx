@@ -86,7 +86,7 @@ const Winter = () => {
     handlePageChange(newPage, event);
   }, [currentPage, totalPages, handlePageChange]);
 
-  // Optimized 
+  // a
   const containerVariants = {
     initial: (direction) => ({
       x: direction * 1000,
